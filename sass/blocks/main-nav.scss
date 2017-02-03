@@ -1,0 +1,25 @@
+.main-nav {
+	min-height: 7rem;
+}
+
+.main-nav__list {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-height: inherit;
+
+	li {
+    position: relative;
+		font: normal 1.6rem $font_1;
+		overflow: visible;
+		text-transform: uppercase;
+		white-space: normal;
+		zoom: 1;
+
+		a {
+			display: block;
+			padding: 0.5rem;
+			color: $color_body;
+		}
+	}
+}

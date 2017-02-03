@@ -1,0 +1,21 @@
+.contacts {
+	display: flex;
+	justify-content: space-between;
+	margin: 3rem auto;
+	padding: 3rem;
+	border: 1px solid $color_field;
+
+	.tel {
+		max-width: 50%;
+	}
+}
+
+.contacts__unit {
+	width: 60%;
+	flex-basis: 60%;
+	margin-right: 5%;
+
+	.title {
+		padding: 0;
+	}
+}

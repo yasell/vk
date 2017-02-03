@@ -1,0 +1,13 @@
+.banner {
+	width: 100%;
+	min-height: 45rem;
+	background: url("../img/banner-bg.jpg") center no-repeat;
+	background-size: cover;
+}
+
+.banner__title {
+	position: absolute;
+	top: 10%;
+	padding: 2rem;
+	background-color: rgba(255, 255, 255, 0.5);
+}

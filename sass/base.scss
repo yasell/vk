@@ -1,0 +1,123 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+html {
+	min-height: 100%;
+	font-size: 7px;
+	@media (min-width: $tablet) {
+		font-size: 9px;
+	}
+	@media (min-width: $desktop) {
+		font-size: 10px;
+	}
+}
+
+body {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	max-width: 100%;
+	min-height: 100%;
+	font: 300 1.6rem/1.3 $font_1;
+	color: $color_body;
+	overflow-x: hidden;
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	text-decoration: none;
+	color: $color_body;
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: $gray;
+	}
+}
+
+p {
+	padding: 2rem 0;
+}
+
+.container {
+	@include container;
+}
+
+.page-wrapper {
+	position: relative;
+	min-height: 100%;
+	height: auto !important;
+	overflow: hidden;
+	background: url("../img/main-bg.svg") center repeat;
+	background-size: 30rem;
+}
+
+h1 {
+	padding: 3rem 0;
+	font: normal 2.6rem $font_1;
+}
+
+h2 {
+	padding: 2rem 0;
+	font: normal 2rem $font_1;
+}
+
+h3 {
+	padding: 1rem 0;
+	font: normal 1.8rem $font_1;
+}
+
+.title {
+	position: relative;
+	text-transform: uppercase;
+	color: $color_title;
+
+	&--center {
+		text-align: center;
+	}
+
+	&--green {
+		width: 50%;
+		margin: 0 auto;
+
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 0.6rem;
+			background-color: $green;
+		}
+	}
+}
+
+// back to top
+.back-top {
+	position: fixed;
+	bottom: 3rem;
+	right: 3rem;
+	z-index: 1000;
+
+	a {
+		display: block;
+		width: 5rem;
+		height: 5rem;
+		background: url("../img/icons/top.svg") center no-repeat;
+		background-size: contain;
+		text-align: center;
+		text-decoration: none;
+
+		&:hover {
+			background-image: url("../img/icons/top_hover.svg");
+		}
+	}
+}

@@ -1,0 +1,41 @@
+.search {
+	max-width: 33%;
+}
+
+.search__list {
+	display: flex;
+	flex-direction: column;
+}
+
+.search__item {
+	width: 100%;
+
+	&:first-child {
+		margin-bottom: 1rem;
+	}
+}
+
+.search__form {
+	position: relative;
+}
+
+.search__label {
+	input[type="text"] {
+		padding-right: 40px;
+	}
+}
+
+.search__submit {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 4.5rem;
+	height: 100%;
+	padding: 0.5rem;
+	font-size: 0;
+	outline: 0;
+	cursor: pointer;
+	border: none;
+	background: url(../img/icons/search.svg) center no-repeat;
+	background-size: 70%;
+}

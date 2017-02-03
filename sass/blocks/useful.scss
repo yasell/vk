@@ -1,0 +1,55 @@
+.useful {
+	width: 100%;
+	background-color: rgba(237, 237, 237, 0.4);
+}
+
+.useful__list {
+	display: flex;
+}
+
+.useful__item {
+	width: 32%;
+	flex-basis: 32%;
+	min-height: 23rem;
+	margin: 0 1% 2% 0;
+
+	&:first-child a {
+		background-image: url("../img/sale.jpg");
+	}
+	&:nth-child(2) a {
+		background-image: url("../img/news.jpg");
+	}
+	&:last-child a {
+		background-image: url("../img/expert.jpg");
+	}
+}
+
+.useful__link {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: $gray center no-repeat;
+	background-size: cover;
+	transition: all 0.5s ease;
+
+	&:hover,
+	&:active {
+		outline: 4px solid rgba(25, 155, 75, 0.7);
+
+		.useful__name {
+			background-color: rgba(25, 155, 75, 0.7);
+		}
+	}
+}
+
+.useful__name {
+	position: absolute;
+	bottom: 0;
+	display: block;
+	width: 100%;
+	padding: 1.5rem 2rem;
+	font: bold 2rem $font_1;
+	color: #fff;
+	background-color: rgba(109, 125, 133, 0.7);
+}

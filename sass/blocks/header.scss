@@ -1,0 +1,19 @@
+.header {
+	width: 100%;
+	background-color: $gray_light;
+}
+
+.header__top {
+	z-index: 10;
+	position: relative;
+	width: 100%;
+	background-color: #fff;
+	box-shadow: 0px 0px 3px #adadad;
+
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 2rem 0;
+	}
+}
