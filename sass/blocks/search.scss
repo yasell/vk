@@ -1,10 +1,23 @@
 .search {
 	max-width: 33%;
+
+	@media (max-width: $tablet) {
+		position: absolute;
+		top: 110%;
+		right: 0;
+		max-width: 100%;
+	}
 }
 
 .search__list {
 	display: flex;
 	flex-direction: column;
+
+	@media (max-width: $tablet) {
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
 }
 
 .search__item {
@@ -12,6 +25,10 @@
 
 	&:first-child {
 		margin-bottom: 1rem;
+
+		@media (max-width: $tablet) {
+			margin: 0 1rem 0 0;
+		}
 	}
 }
 

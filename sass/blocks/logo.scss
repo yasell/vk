@@ -5,4 +5,8 @@
 	img {
 		max-width: 100%;
 	}
+
+	@media (max-width: $tablet) {
+		max-width: 50%;
+	}
 }

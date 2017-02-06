@@ -35,9 +35,11 @@
 
 .footer__map {
 	width: 29rem;
-	height: 20rem;
+	height: 24rem;
 	margin-top: 3rem;
 	background-color: $color_field;
+	overflow: hidden;
+
 }
 
 .footer__copyright {

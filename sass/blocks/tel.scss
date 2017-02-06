@@ -2,6 +2,10 @@
 	width: 100%;
 	max-width: 23rem;
 	font: 200 1.8rem $font_1;
+
+	@media (max-width: $tablet) {
+		
+	}
 }
 
 .tel__list {

@@ -6,10 +6,8 @@
 
 html {
 	min-height: 100%;
-	font-size: 7px;
-	@media (min-width: $tablet) {
-		font-size: 9px;
-	}
+	font-size: 9px;
+
 	@media (min-width: $desktop) {
 		font-size: 10px;
 	}
@@ -23,12 +21,26 @@ body {
 	width: 100%;
 	max-width: 100%;
 	min-height: 100%;
-	font: 300 1.6rem/1.3 $font_1;
+	font: 300 1.6rem/1.5 $font_1;
 	color: $color_body;
 	overflow-x: hidden;
 	-webkit-text-size-adjust: none;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+	@include container;
+}
+
+.page-wrapper {
+	position: relative;
+	max-width: 100%;
+	min-height: 100%;
+	height: auto !important;
+	overflow: hidden;
+	background: url("../img/main-bg.svg") center repeat;
+	background-size: 30rem;
 }
 
 a {
@@ -44,19 +56,6 @@ a {
 
 p {
 	padding: 2rem 0;
-}
-
-.container {
-	@include container;
-}
-
-.page-wrapper {
-	position: relative;
-	min-height: 100%;
-	height: auto !important;
-	overflow: hidden;
-	background: url("../img/main-bg.svg") center repeat;
-	background-size: 30rem;
 }
 
 h1 {
