@@ -1,21 +1,56 @@
 .contacts {
 	display: flex;
 	justify-content: space-between;
-	margin: 3rem auto;
-	padding: 3rem;
-	border: 1px solid $color_field;
 
 	.tel {
 		max-width: 50%;
 	}
+	&--border {
+		margin: 3rem auto;
+		padding: 3rem;
+		border: 1px solid $color_field;
+	}
+	@media (max-width: $tablet) {
+		flex-wrap: wrap;
+	}
 }
 
 .contacts__unit {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
 	width: 60%;
 	flex-basis: 60%;
 	margin-right: 5%;
 
-	.title {
-		padding: 0;
+	> div {
+		display: inline-block;
+		width: 48%;
+		margin-right: 2%;
 	}
+	> h2 {padding: 0;}
+	p {padding: 0.5rem 0;}
+
+	@media (max-width: $tablet) {
+		width: 100%;
+		flex-basis: auto;
+	}
+}
+
+.contacts__name {
+	font-weight: normal;
+	font-size: 2.4rem;
+}
+
+.contacts__form {
+	width: 40%;
+
+	@media (max-width: $tablet) {
+		width: 100%;
+		margin-top: 2rem;
+	}
+}
+
+.map-contacts {
+	margin: 6rem 0 2rem 0;
 }

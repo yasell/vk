@@ -5,6 +5,7 @@ var sass = require("gulp-sass");
 var plumber = require("gulp-plumber");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
+// var rigger = require("gulp-rigger");
 var server = require("browser-sync");
 var mqpacker = require("css-mqpacker");
 var rename = require("gulp-rename");
@@ -12,6 +13,16 @@ var clean = require("gulp-clean");
 var cleanCSS = require("gulp-clean-css");
 var image = require("gulp-image");
 var minify = require("gulp-minify");
+
+//
+// gulp.task("html", function() {
+// 	gulp.src("html/*.html")
+// 		.pipe(rigger())
+// 		.pipe(gulp.dest("css"))
+// 		.pipe(server.reload({
+// 			stream: true
+// 	}));
+// });
 
 // sass task
 gulp.task("style", function() {
@@ -64,15 +75,20 @@ gulp.task("copy", ["clean"], function() {
 // minify files
 gulp.task("style-min", function() {
 	return gulp.src("css/*.css")
-		.pipe(cleanCSS({compatibility: "ie8", debug: true}, function(details) {
-    		console.log(details.name + ": "  + details.stats.originalSize);
-        console.log(details.name + ": " + details.stats.minifiedSize);
-    }))
-    .pipe(cleanCSS({compatibility: "ie8"}))
+		.pipe(cleanCSS({
+			compatibility: "ie8",
+			debug: true
+		}, function(details) {
+			console.log(details.name + ": " + details.stats.originalSize);
+			console.log(details.name + ": " + details.stats.minifiedSize);
+		}))
+		.pipe(cleanCSS({
+			compatibility: "ie8"
+		}))
 		.pipe(rename({
 			suffix: ".min"
 		}))
-    .pipe(gulp.dest("build/css"));
+		.pipe(gulp.dest("build/css"));
 });
 
 gulp.task("img-min", function() {

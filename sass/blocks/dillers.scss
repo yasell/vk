@@ -1,0 +1,66 @@
+.map {
+	width: 100%;
+	max-height: 46rem;
+	margin-top: 3rem;
+	background-color: $gray;
+}
+
+.dillers {
+
+	.cd-accordion-menu .has-children > ul {
+		background: #fff url(../img/main-bg.svg) center repeat fixed;
+		background-size: 30rem;
+	}
+
+	.has-children {
+		background-color: $grey;
+	}
+
+	label {
+		padding: 3rem 1rem;
+		font: normal 2rem $font_1;
+		text-transform: uppercase;
+		color: #fff;
+
+		&:active,
+		&:hover {
+			color: #fff;
+		}
+
+		&:before {
+			width: 3rem;
+			height: 3rem;
+			background-image: url("../img/icons/arrow-up-white.svg");
+		}
+	}
+}
+
+.cd-accordion-menu ul li.dillers__table {
+
+	a {
+		padding: 0.5rem;
+	}
+
+	&:before {
+		display: none;
+	}
+}
+
+.dillers__table {
+	padding: 0;
+	overflow: auto;
+
+	.mytable {
+		width: 100%;
+		margin: 0;
+
+		> tbody > tr > td {
+			padding: 1rem 0.5rem;
+		}
+
+		> tbody > tr > td:first-child {
+			font-weight: bold;
+			border-right: none;
+		}
+	}
+}

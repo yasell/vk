@@ -2,9 +2,9 @@
 %form_field {
 	display: block;
 	width: 100%;
-	height: 4rem;
+	height: 4.5rem;
 	padding: 1rem;
-	padding-left: 3rem;
+	padding-left: 3.5rem;
 	font: 200 1.6rem/1.33 $font_1;
 	color: $gray;
 	background-color: #fff;
@@ -40,7 +40,7 @@ textarea {
 	}
 	&:required:valid {
 		outline: none;
-		border-color: green;
+		border-color: $green;
 	}
 }
 
@@ -52,7 +52,7 @@ textarea {
 // end inputs and selects base
 
 .form {
-	max-width: 40%;
+	max-width: 100%;
 	margin: 0 auto;
 }
 
@@ -64,7 +64,7 @@ textarea {
 
 	> label {
 		position: absolute;
-		top: 0.8rem;
+		top: 1rem;
 		left: 1rem;
 		opacity: 0.3;
 	}
@@ -83,7 +83,7 @@ textarea {
 			}
 
 			&:valid {
-        background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/check.svg");
+        background: url("../img/icons/check.svg");
         background-size: 20px;
         background-repeat: no-repeat;
         background-position: 6px 10px;
@@ -123,7 +123,7 @@ label.form__file {
 	span,
 	mark {
 		display: block;
-		padding: 1rem;
+		padding: 0.6rem;
     width: 48%;
 		white-space: nowrap;
     text-overflow: ellipsis;

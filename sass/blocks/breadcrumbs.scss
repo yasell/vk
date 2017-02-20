@@ -1,0 +1,38 @@
+.breadcrumbs {
+	width: 100%;
+	// min-height: 5rem;
+	border-bottom: 1px solid $gray;
+}
+
+.breadcrumbs__list {
+	padding: 1rem;
+
+}
+
+.breadcrumbs__item {
+	position: relative;
+	display: inline-block;
+	margin: 0 2rem 0 0;
+	line-height: 2;
+
+	a,
+	span {
+		font-size: 1.4rem;
+		color: $color_title;
+
+		&:hover {
+			color: $green;
+		}
+	}
+
+	&:after {
+		content: ">";
+		position: absolute;
+		top: 2px;
+		right: -1.5rem;
+		color: $color_title;
+	}
+	&:last-child {
+		&:after {display: none;}
+	}
+}

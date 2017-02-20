@@ -1,0 +1,41 @@
+.price {
+  padding: 1rem 0;
+}
+
+.price__item {
+  position: relative;
+  margin-bottom: 1rem;
+	padding: 0.5rem 4rem;
+
+  a {
+    font-size: 1.6rem;
+    color: $color_title;
+
+		&:hover,
+		&:active {
+			color: $green;
+		}
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 3rem;
+    height: 3rem;
+    background: url("../img/icons/pdf-red.svg") center no-repeat;
+    background-size: contain;
+  }
+
+  &--word {
+    &:before {
+      background-image: url("../img/icons/word.svg");
+    }
+  }
+
+  &--exel {
+    &:before {
+      background-image: url("../img/icons/exel.svg");
+    }
+  }
+}

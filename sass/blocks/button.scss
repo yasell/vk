@@ -2,10 +2,11 @@
 	position: relative;
 	display: inline-block;
 	width: 100%;
-	max-width: 30rem;
+	max-width: 33rem;
 	padding: 1.2rem 3rem;
 	border: 1px solid $green;
 	border-radius: 1rem;
+	-webkit-border-radius: 1rem;
 	user-select: none;
 	touch-action: manipulation;
 	font-weight: 600;
@@ -14,43 +15,87 @@
 	text-align: center;
 	white-space: normal;
 	word-wrap: normal;
-	color: #fff;
+	color: #fff !important;
 	background-color: $green;
-	// effect
-	opacity: 1;
-	transition-property: box-shadow;
-	will-change: box-shadow;
-	transition-timing-function: linear;
-	transition-duration: 0.2s;
+	-webkit-appearance: none;
 
-	&:before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: calc(100% + 0.6rem);
-		height: calc(100% + 0.6rem);
-		border: 1px solid $green_light;
-		transform: translate(0,0);
-		opacity: 0;
-		transition-property: transform,opacity;
-		transition-property: transform,opacity,-webkit-transform;
-		will-change: transform,opacity;
-		transition-timing-function: linear;
-		transition-duration: 0.2s;
+	@include effect;
+
+	&:hover,
+	&:active {
+		color: #fff;
 	}
 
-	&:active,
-	&:hover {
-		cursor: pointer;
-		text-decoration: none;
-		background-color: $green_light;
-		border-color: $green_light;
-		box-shadow: 5px 5px rgba(78,181,67,.5);
+	&--small {
+		max-width: 17rem;
+		padding: 0.5rem;
+		border-radius: 0.7rem;
+	}
 
-		&:before {
-			transform: translate(-0.5rem,-0.5rem);
-			opacity: 1;
+	&--grey {
+		border-color: $grey;
+		font-size: 1.4rem;
+		color: $grey;
+		background-color: $grey;
+
+		&:hover,
+		&:active {
+			color: #fff;
+			background-color: $grey;
+			border-color: $grey;
+			box-shadow: 5px 5px rgba(127, 150, 161, 0.6);
 		}
+	}
+
+	&--icon {
+		padding-left: 4rem;
+		padding-right: 1rem;
+
+		&:after {
+			content: "";
+			z-index: 550;
+			position: absolute;
+			top: 0.3rem;
+			left: 1rem;
+			width: 4rem;
+			height: 4rem;
+			background: url("../img/icons/pdf.svg") center no-repeat;
+			transform: translateZ(0);
+		}
+		&:hover {
+			&:after {
+				animation-name: hvr-icon-hang-sink, hvr-icon-hang;
+				animation-duration: 0.3s, 1.5s;
+				animation-delay: 0s, 0.3s;
+				animation-timing-function: ease-out, ease-in-out;
+				animation-iteration-count: 1, infinite;
+				animation-fill-mode: forwards;
+				animation-direction: normal, alternate;
+			}
+		}
+	}
+}
+
+// icon animation
+@keyframes hvr-icon-hang {
+	0% {
+		-webkit-transform: translateY(4px);
+		transform: translateY(4px);
+	}
+
+	50% {
+		-webkit-transform: translateY(0px);
+		transform: translateY(0px);
+	}
+
+	100% {
+		-webkit-transform: translateY(4px);
+		transform: translateY(4px);
+	}
+}
+@keyframes hvr-icon-hang-sink {
+	100% {
+		-webkit-transform: translateY(4px);
+		transform: translateY(4px);
 	}
 }

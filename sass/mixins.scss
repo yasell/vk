@@ -12,13 +12,6 @@
   max-width: 1000px;
   margin: 0 auto;
 	padding: 0 1rem;
-
-  // @media (min-width: $tablet) {
-  //   width: 700px;
-  // }
-  // @media (min-width: $desktop) {
-  //   width: 1000px;
-  // }
 }
 
 // centering
@@ -42,6 +35,47 @@
   }
 }
 
+// button and link effect
+@mixin effect {
+	opacity: 1;
+	transition-property: box-shadow;
+	will-change: box-shadow;
+	transition-timing-function: linear;
+	transition-duration: 0.3s;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: calc(100% + 0.6rem);
+		height: calc(100% + 0.6rem);
+		border: 1px solid $green_light;
+		transform: translate(0,0);
+		opacity: 0;
+		transition-property: transform,opacity;
+		transition-property: transform,opacity,-webkit-transform;
+		will-change: transform,opacity;
+		transition-timing-function: linear;
+		transition-duration: 0.2s;
+	}
+
+	&:active,
+	&:hover {
+		cursor: pointer;
+		text-decoration: none;
+		overflow: visible;
+		background-color: $green_light;
+		border-color: $green_light;
+		box-shadow: 5px 5px rgba(78,181,67,.6);
+
+		&:before {
+			transform: translate(-0.5rem,-0.5rem);
+			opacity: 1;
+		}
+	}
+}
+
 // for shadow(?) after content_text
 @mixin text-shadow {
 	&:after {
@@ -62,51 +96,4 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: $overflow; // values are: clip, ellipsis, or a string
-}
-
-// tooltip
-@mixin tooltip($content: attr(data-tooltip), $direction: top) {
-  position: relative;
-
-  &:before, &:after {
-    display: none;
-    z-index: 98;
-  }
-  &:hover {
-    &:after { // for text bubble
-      content: $content;
-      display: block;
-      position: absolute;
-      height: 12px; // (makes total height including padding 22px)
-      padding: 6px;
-      font-size: 12px;
-      white-space: nowrap;
-      color: #fff;
-      @include text-shadow(1px 1px #000);
-      background-color: #222;
-    }
-    @if ($direction == 'top') {
-      &:before {
-        @include triangle(down, 6px, #222);
-        top: -6px; margin-top: 0;
-        left: 47%;
-      }
-      &:after {
-        top: -28px;
-        left: 47%; margin-left: -20px;
-      }
-    }
-    @else if ($direction == 'bottom') {
-      &:before {
-        @include triangle(up, 6px, #222);
-        top: auto; margin-top: 0;
-        bottom: -6px;
-        left: 47%;
-      }
-      &:after {
-        bottom: -28px;
-        left: 47%; margin-left: -20px;
-      }
-    }
-  }
 }

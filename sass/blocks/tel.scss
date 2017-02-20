@@ -1,17 +1,14 @@
 .tel {
 	width: 100%;
 	max-width: 23rem;
-	font: 200 1.8rem $font_1;
-
-	@media (max-width: $tablet) {
-		
-	}
+	font: normal 1.8rem $font_1;
 }
 
 .tel__list {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	max-width: 25rem;
 }
 
 .tel__item {
@@ -20,8 +17,8 @@
 	width: 100%;
 	margin-bottom: 0.5rem;
 
-	&:first-child span:first-of-type {
-		font-weight: normal;
+	&:first-child {
+		margin-top: 0.5rem;
 	}
 }
 
@@ -32,4 +29,5 @@
 	&:active {
 		color: $green_light;
 	}
+	@include niceText;
 }

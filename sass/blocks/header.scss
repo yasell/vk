@@ -1,10 +1,11 @@
 .header {
+	position: relative;
 	width: 100%;
 	background-color: $gray_light;
 }
 
 .header__top {
-	z-index: 10;
+	z-index: 100;
 	position: relative;
 	width: 100%;
 	background-color: #fff;
@@ -15,5 +16,31 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 2rem 1rem;
+
+		&:after {
+			display: none;
+		}
+
+		@media (max-width: $mobile_full) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+}
+
+.header__logo {
+	width: 100%;
+	max-width: 33%;
+	min-height: 100%;
+
+	img {
+		max-width: 100%;
+	}
+
+	@media (min-width: $mobile_full) and (max-width: $tablet) {
+		max-width: 50%;
+	}
+	@media (max-width: $mobile_full) {
+		max-width: 100%;
 	}
 }

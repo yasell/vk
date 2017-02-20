@@ -29,23 +29,10 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.container {
-	@include container;
-}
-
-.page-wrapper {
-	position: relative;
-	max-width: 100%;
-	min-height: 100%;
-	height: auto !important;
-	overflow: hidden;
-	background: url("../img/main-bg.svg") center repeat;
-	background-size: 30rem;
-}
-
 a {
 	text-decoration: none;
 	color: $color_body;
+	transition: all 0.5s ease;
 
 	&:hover,
 	&:active,
@@ -59,13 +46,20 @@ p {
 }
 
 h1 {
-	padding: 3rem 0;
-	font: normal 2.6rem $font_1;
+	padding: 2rem 0;
+	font: normal 2rem $font_1;
+
+	+ h2 {
+		padding-top: 2.5rem;
+	}
+	+ .listing {
+		padding-top: 2rem;
+	}
 }
 
 h2 {
-	padding: 2rem 0;
-	font: normal 2rem $font_1;
+	padding: 1.5rem 0;
+	font: normal 1.9rem $font_1;
 }
 
 h3 {
@@ -73,30 +67,91 @@ h3 {
 	font: normal 1.8rem $font_1;
 }
 
+// wrapper
+.container {
+	@include container;
+	@include clearfix;
+}
+
+.page-wrapper {
+	position: relative;
+	max-width: 100%;
+	min-height: 100%;
+	height: auto !important;
+	overflow: hidden;
+	background: url("../img/main-bg.svg") center repeat fixed;
+	background-color: #fff;
+	background-size: 30rem;
+}
+
+// title`s
 .title {
 	position: relative;
 	text-transform: uppercase;
 	color: $color_title;
 
-	&--center {
-		text-align: center;
-	}
-
 	&--green {
-		width: 50%;
-		margin: 0 auto;
-
 		&:after {
 			content: "";
 			position: absolute;
 			bottom: 0;
 			left: 0;
 			display: block;
-			width: 100%;
+			width: 70%;
 			height: 0.6rem;
 			background-color: $green;
 		}
 	}
+	&--center {
+		margin: 0 auto;
+		text-align: center;
+		&:after {
+			width: 100%;
+		}
+	}
+}
+
+// table
+.mytable {
+	width: 65%;
+  max-width: 100%;
+  margin: 2rem 0;
+	background: transparent;
+	border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.mytable > tbody > tr {
+	text-align: center;
+}
+
+.mytable > tbody > tr > td {
+	width: 50%;
+	padding: 2rem 1rem;
+}
+
+.mytable > tbody > tr:first-of-type > td {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.8rem;
+	color: $green;
+}
+
+.mytable > tbody > tr > td:first-child {
+	font-weight: 600;
+	border-right: 1px solid $green;
+}
+
+.mytable > tbody > tr:nth-of-type(odd) {
+	background-color: $gray_light;
+}
+
+.mytable > tbody > tr:nth-of-type(even) {
+	background-color: #dadada;
+}
+
+.mytable > tbody > tr:nth-of-type(even) > td:first-child {
+	color: $gray;
 }
 
 // back to top
@@ -104,7 +159,7 @@ h3 {
 	position: fixed;
 	bottom: 3rem;
 	right: 3rem;
-	z-index: 1000;
+	z-index: 450;
 
 	a {
 		display: block;
@@ -115,8 +170,12 @@ h3 {
 		text-align: center;
 		text-decoration: none;
 
-		&:hover {
-			background-image: url("../img/icons/top_hover.svg");
+		&:hover,
+		&:active,
+		&:focus {
+			cursor: pointer;
+			outline: none;
+			transform: scale(1.1);
 		}
 	}
 }

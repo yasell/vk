@@ -1,0 +1,57 @@
+.news {
+	width: 100%;
+	padding: 1rem 0 4rem 0;
+}
+
+.news__list {}
+
+.news__item {
+	display: flex;
+	width: 100%;
+	margin-bottom: 2.5rem;
+	padding: 1.5rem;
+	border: 1px solid $gray;
+
+	@media (max-width: $mobile_full) {
+		flex-wrap: wrap;
+	}
+}
+
+.news__img-wrapper {
+	position: relative;
+	width: 25%;
+	max-height: 20rem;
+	margin-right: 1.5rem;
+	overflow: hidden;
+
+	img {
+		@include center;
+	}
+	@media (max-width: $tablet) {
+		width: 35%;
+	}
+	@media screen and (max-width: $mobile_full) {
+		width: 100%;
+		height: 25rem;
+		margin: 0 0 1rem 0;
+	}
+}
+
+.news__content {
+	width: 73%;
+
+	p {
+		padding: 1rem 0;
+	}
+	@media (max-width: $tablet) {
+		width: 60%;
+	}
+	@media screen and (max-width: $mobile_full) {
+		width: 100%;
+	}
+}
+
+.news__title {
+	padding: 0 0 1rem 0;
+	font-weight: 600;
+}

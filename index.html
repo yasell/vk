@@ -8,7 +8,7 @@
 	<meta name="msapplication-tap-highlight" content="no">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
-	<title> Main_Page </title>
+	<title> MainPage </title>
 	<link href="css/style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 
@@ -22,10 +22,11 @@
 
 <body>
 	<div class="page-wrapper">
+
 		<header class="header">
 			<div class="header__top">
 				<div class="container">
-					<a class="logo" href="/">
+					<a class="header__logo" href="/">
 						<img src="img/logo.jpg" alt="Ваша кровля">
 					</a>
 					<div class="tel">
@@ -51,43 +52,94 @@
 							</li>
 						</ul>
 					</div>
-					<div class="search">
-						<ul class="search__list">
-							<li class="search__item">
-								<button class="button" type="button" name="Заказать звонок">Заказать звонок</button>
-							</li>
-							<li class="search__item">
-								<form id="search" class="search__form" method="get" action="#" target="_top">
-									<label class="search__label">
-										<input id="searching" type="text" name="search">
-									</label>
-									<button class="search__submit" type="submit">Поиск</button>
-								</form>
-							</li>
-						</ul>
+					<div class="search  search--top">
+						<div class="search__item">
+							<button id="call" class="button" type="button" name="Заказать звонок">Заказать звонок</button>
+							<i class="search__icon"></i>
+						</div>
+						<div class="search__item">
+							<form id="search" class="search__form" method="get" action="#" target="_top">
+								<label class="search__label">
+									<input id="searching" type="text" name="search">
+								</label>
+								<button class="search__submit" type="submit">Поиск</button>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
-			<nav class="main-nav  container">
-				<ul class="main-nav__list">
-					<li>
-						<a aria-haspopup="true" href="#/" role="menuitem">
-							<span data-g-event="nav-dropdown">Главная</span>
-						</a>
-					</li>
-					<li><a href="#/">О компании</a></li>
-					<li><a href="#/">Каталог</a></li>
-					<li><a href="#/">Акции</a></li>
-					<li><a href="#/">Совет эксперта</a></li>
-					<li><a href="#/">Где купить</a></li>
-					<li><a href="#/">Галерея</a></li>
-					<li><a href="#/">Прайсы</a></li>
-					<li><a href="#/">Контакты</a></li>
-				</ul>
+
+			<nav class="nav" role="navigation">
+				<div class="container">
+					<button class="nav-toggle">
+						<div class="icon-menu">
+							<span class="line line-1"></span>
+							<span class="line line-2"></span>
+							<span class="line line-3"></span>
+						</div>
+					</button>
+					<div class="nav-container">
+						<ul class="nav__list">
+							<li class="menu-item"><a href="#/" class="menu-link">Главная</a></li>
+							<li class="menu-item"><a href="#/" class="menu-link">О компании</a></li>
+
+							<li class="menu-item  has-dropdown">
+								<a href="#/" class="menu-link">Каталог</a>
+								<ul class="nav-dropdown">
+									<li class="menu-item"><a href="#/" class="menu-link">Технологические карты</a></li>
+									<li class="menu-item  has-dropdown">
+										<a href="#/" class="menu-link">Кровельные материалы</a>
+										<ul class="nav-dropdown">
+											<li class="menu-item"><a href="#!" class="menu-link">Гибкая черепица</a></li>
+											<li class="menu-item  has-dropdown">
+												<a href="#!" class="menu-link">Металлочерепица</a>
+												<ul class="nav-dropdown">
+													<li class="menu-item"><a href="#/" class="menu-link">Blachotrapez</a></li>
+													<li class="menu-item"><a href="#/" class="menu-link">Ruukki</a></li>
+													<li class="menu-item"><a href="#/" class="menu-link">Альтер</a></li>
+													<li class="menu-item"><a href="#/" class="menu-link">Vilrufas</a></li>
+													<li class="menu-item"><a href="#/" class="menu-link">Монтеррей</a></li>
+												</ul>
+											</li>
+											<li class="menu-item"><a href="#/" class="menu-link">Композитная черепица</a></li>
+											<li class="menu-item"><a href="#/" class="menu-link">Керамическая черепица</a></li>
+										</ul>
+									</li>
+									<li class="menu-item"><a href="#/" class="menu-link">Системы вентиляции</a></li>
+									<li class="menu-item"><a href="#/" class="menu-link">Водосточные системы</a></li>
+									<li class="menu-item"><a href="#/" class="menu-link">Фасадные материалы</a></li>
+									<li class="menu-item"><a href="#/" class="menu-link">Комплектующие для кровли</a></li>
+									<li class="menu-item"><a href="#/" class="menu-link">Мансардные окна</a></li>
+									<li class="menu-item"><a href="#/" class="menu-link">Чердачные лестницы</a></li>
+									<li class="menu-item"><a href="#/" class="menu-link">Средства ухода за кровлей</a></li>
+								</ul>
+							</li>
+
+							<li class="menu-item"><a href="#/" class="menu-link">Акции</a></li>
+							<li class="menu-item  has-dropdown">
+								<a href="#/" class="menu-link">Совет эксперта</a>
+								<ul class="nav-dropdown">
+									<li class="menu-item"><a href="#/" class="menu-link">Новости</a></li>
+									<li class="menu-item"><a href="#/" class="menu-link">Полезная информация</a></li>
+								</ul>
+							</li>
+							<li class="menu-item"><a href="#/" class="menu-link">Где купить</a></li>
+							<li class="menu-item  has-dropdown">
+								<a href="#/" class="menu-link">Галерея</a>
+								<ul class="nav-dropdown">
+									<li class="menu-item"><a href="#/" class="menu-link">Фотогалерея</a></li>
+									<li class="menu-item"><a href="#/" class="menu-link">Видеогалерея</a></li>
+								</ul>
+							</li>
+							<li class="menu-item"><a href="#/" class="menu-link">Прайсы</a></li>
+							<li class="menu-item"><a href="#/" class="menu-link">Контакты</a></li>
+						</ul>
+					</div>
+				</div>
 			</nav>
 		</header>
 
-		<main>
+		<main class="" role="main">
 			<div class="banner">
 				<div class="container">
 					<h1 class="title  banner__title">Здесь будет какой-то заголовок.</h1>
@@ -204,7 +256,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="contacts  container">
+			<div class="contacts  contacts--border  container">
 				<div class="contacts__unit">
 					<h2 class="title">Свяжитесь с нами, если у вас есть вопросы</h2>
 					<p>Повседневная практика показывает, что реализация намеченных плановых заданий позволяет выполнять важные задания по разработке существенных финансовых и административных условий. Значимость этих проблем настолько очевидна, что начало повседневной
@@ -234,7 +286,7 @@
 						</ul>
 					</div>
 				</div>
-				<form id="contact" class="form  contacts__form" method="get" action="#">
+				<form id="contact" class="form  contacts__form" method="post" action="#">
 					<div class="form__unit">
 						<input type="text" id="first_name" name="first_name" required placeholder=" " />
 						<label for="first_name">Ваше имя</label>
@@ -243,14 +295,14 @@
 						<input type="email" id="email" name="email" required placeholder=" " />
 						<label for="email">Email</label>
 						<div class="form__error">
-							Введите пожалуйста реальный почтовый адресс.
+							Ждём от Вас реальный почтовый адрес.
 						</div>
 					</div>
 					<div class="form__unit">
-						<input type="tel" id="tel" name="phone" required placeholder=" " pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" />
-						<label for="password">Телефон</label>
+						<input type="tel" id="phone" name="phone" required placeholder=" " pattern="^\+375|80(\s+)?\(?(17|25|29|33|44)\)?(\s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$" />
+						<label for="phone">Телефон</label>
 						<div class="form__error">
-							Введите пожалуйста реальный телефон.
+							Введите пожалуйста полный номер телефона.
 						</div>
 					</div>
 					<div class="form__unit">
@@ -336,22 +388,51 @@
 		</footer>
 	</div>
 
+	<div id="back-top" class="back-top">
+		<a href="#top"></a>
+	</div>
+
+	<div class="modal_bg"></div>
+
+	<div id="modal_call" class="modal">
+		<button id="modal_close" class="modal__close"> Close </button>
+		<div class="modal__guts">
+			<h2 class="title">Заказать звонок</h2>
+			<form class="form  contacts__form" method="post" action="#">
+				<div class="form__unit">
+					<input type="text" id="first_name" name="first_name" required placeholder=" " />
+					<label for="first_name">Ваше имя</label>
+				</div>
+				<div class="form__unit">
+					<input type="email" id="email" name="email" required placeholder=" " />
+					<label for="email">Email</label>
+					<div class="form__error">
+						Введите пожалуйста реальный почтовый адресс.
+					</div>
+				</div>
+				<div class="form__unit">
+					<input type="tel" id="tel" name="phone" required placeholder=" " pattern="^((8|\+3)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" />
+					<label for="phone">Телефон</label>
+					<div class="form__error">
+						Введите пожалуйста реальный телефон.
+					</div>
+				</div>
+				<div class="form__unit">
+					<label class="form__file">
+						<span class="button"> Загрузить файл </span>
+						<mark> Файл не выбран </mark>
+						<input type="file" id="file" name="file" multiple>
+					</label>
+				</div>
+				<input class="form__submit  button" type="submit" value="Отправить" />
+			</form>
+		</div>
+	</div>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU"></script>
 	<script src="js/helper.js"></script>
 	<script src="js/main.js"></script>
-	<!-- <script>
-		var Mymap
 
-		ymaps.ready(function() {
-			Mymap = new ymaps.Map("f_map", {
-				center: [53.923551, 27.669413],
-				zoom: 15
-			});
-			var myPlacemark = new ymaps.Placemark([53.923551, 27.669413]);
-		});
-		myMap.geoObjects.add(myPlacemark);
-	</script> -->
 </body>
 
 </html>
