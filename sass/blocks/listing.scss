@@ -62,3 +62,23 @@
 .listing__img {
 	@include center;
 }
+
+.fancybox-skin {
+  .fancybox-close {
+    background-image: url("../img/icons/cross.svg");
+  }
+  .fancybox-next span {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: #fff url("../img/icons/arrow-next-green.svg") 70% center no-repeat;
+    background-size: 1.5rem;
+  }
+  .fancybox-prev span {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: #fff url("../img/icons/arrow-prev-green.svg") 30% center no-repeat;
+    background-size: 1.5rem;
+  }
+}

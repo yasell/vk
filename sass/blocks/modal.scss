@@ -1,24 +1,31 @@
 .modal {
 	z-index: 1000;
 	position: fixed;
-	top: 50%;
-	left: 50%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	display: none;
 	width: 100%;
 	max-width: 50rem;
 	height: 40rem;
 	max-height: 100%;
+	margin: auto;
 	border: 2px solid rgba(0,0,0,0.15);
 	background: #fff;
 	box-shadow: 0.4rem 0.4rem 0.5rem $color_shadow;
 	outline: none;
 	overflow: hidden;
-	transform: translate(-50%, -50%);
-	transition: all .5s ease;
+	visibility: hidden;
+	// transition: all .5s ease;
 
 	// show modal window
 	&_show {
 		display: block;
+		visibility: visible !important;
+		animation-name: expandUp;
+		animation-duration: 0.7s;
+		animation-timing-function: ease;
 	}
 	// background
 	&_bg {
@@ -78,5 +85,36 @@
 
 	.contacts__form {
 		width: 100%;
+	}
+}
+
+// modal animation
+@keyframes expandUp {
+	0% {
+		transform: translateY(100%) scale(0.6) scaleY(0.5);
+	}
+	60%{
+		transform: translateY(-7%) scaleY(1.12);
+	}
+	75%{
+		transform: translateY(3%);
+	}
+	100% {
+		transform: translateY(0%) scale(1) scaleY(1);
+	}
+}
+
+@-webkit-keyframes expandUp {
+	0% {
+		-webkit-transform: translateY(100%) scale(0.6) scaleY(0.5);
+	}
+	60%{
+		-webkit-transform: translateY(-7%) scaleY(1.12);
+	}
+	75%{
+		-webkit-transform: translateY(3%);
+	}
+	100% {
+		-webkit-transform: translateY(0%) scale(1) scaleY(1);
 	}
 }

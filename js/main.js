@@ -10,7 +10,7 @@ $(document).ready(function($) {
 
 // main navigation menu
 $(function() {
-	var html = $('html, body'),
+	var html = $('html'),
 		navContainer = $('.nav-container'),
 		navToggle = $('.nav-toggle'),
 		navDropdownToggle = $('.has-dropdown');
@@ -36,18 +36,17 @@ $(function() {
 	});
 });
 
-// searching icon
+// search input on mobile
 var searchIcon = $(".search__icon");
+var searchTop = $("#search");
 
 $(".search__icon").on("click", function() {
 	if (searchIcon.hasClass("search__icon--focus")) {
 		searchIcon.removeClass("search__icon--focus");
-		// $("#search").css("opacity", "0");
-		$("#search").fadeOut(300);
+		searchTop.removeClass("search__form--visible");
 	} else {
 		searchIcon.addClass("search__icon--focus");
-		// $("#search").css("opacity", "1");
-		$("#search").fadeIn(300);
+		searchTop.addClass("search__form--visible");
 	}
 	return false;
 });
@@ -56,12 +55,10 @@ $(".search__icon").on("click", function() {
 $("#back-top").hide();
 
 $(window).scroll(function() {
-	if ($(this).scrollTop() > 200) {
+	if ($(this).scrollTop() > 500) {
 		$("#back-top").fadeIn();
-		// $(".is-fixed").css("position", "fixed");
 	} else {
 		$("#back-top").fadeOut();
-		// $(".is-fixed").css("position", "relative");
 	}
 });
 
