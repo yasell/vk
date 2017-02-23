@@ -1,43 +1,43 @@
 .post {
-	display: flex;
 	padding: 2rem 0;
+	@include clearfix;
 
 	.button {
 		float: right;
 	}
 
-	p {
+	.title {
+		margin-bottom: 1.5rem;
 		padding-top: 0;
-		padding-bottom: 1rem;
+	}
+
+	p:not(:last-child),
+	ol:not(:last-child),
+	ul:not(:last-child),
+	dl:not(:last-child) {
+		margin-bottom: 1.5rem;
+		padding: 0;
 	}
 
 	a {
+		font-weight: normal;
 		color: $green;
-	}
-
-	@media screen and (max-width: $tablet) {
-		flex-wrap: wrap;
 	}
 }
 
 .post__photo {
-	width: 40%;
-	margin-right: 1.5rem;
+	float: left;
+	max-width: 40%;
+	margin: 0 1.5rem 0 0;
 	overflow: hidden;
 
-	img {
-		display: block;
-		max-width: 100%;
-		margin: 0 auto;
-	}
-
 	@media screen and (max-width: $tablet) {
-		width: 100%;
+		max-width: 100%;
 	}
 }
 
 .post__content {
-	width: 60%;
+	// width: 55%;
 
 	@media screen and (max-width: $tablet) {
 		width: 100%;

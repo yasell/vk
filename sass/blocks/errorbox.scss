@@ -1,0 +1,51 @@
+.errorbox {
+	position: relative;
+	display: flex;
+	width: 100%;
+	padding: 4rem 0;
+	min-height: 40vh;
+
+	// oops
+	&:before {
+		content: "";
+		position: absolute;
+		top: 15%;
+		left: 45%;
+		width: 10rem;
+		height: 6rem;
+		background: url("../img/oops.png") no-repeat;
+		background-size: contain;
+
+		@media (max-width: 840px) {
+			top: 5%;
+		}
+	}
+}
+
+.errorbox__left {
+	width: 40%;
+	min-height: inherit;
+	background: url("../img/404.png") center 0 no-repeat;
+	background-size: contain;
+
+	@media (max-width: 840px) {
+		width: 100%;
+		background-position: center 35%;
+	}
+}
+
+.errorbox__right {
+	position: relative;
+	width: 60%;
+	min-height: inherit;
+	background: url("../img/404-right.png") center 11rem no-repeat;
+	background-size: contain;
+
+	@media (max-width: 840px) {
+		display: none;
+	}
+
+	// @media (max-width: $desktop) {
+	// 	background-position: center 9.5rem;
+	// }
+}

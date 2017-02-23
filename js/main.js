@@ -4,7 +4,7 @@ $(document).ready(function($) {
 	windowHeight = $(window).height();
 
 	//developer funcitons
-	pageWidget(["index", "catalog", "catalog_inner", "product", "gallery", "gallery_inner", "news", "contacts", "price", "dillers", "search"]);
+	pageWidget(["index", "catalog", "catalog_inner", "product", "gallery", "gallery_inner", "news", "contacts", "price", "dillers", "search", "textpage", "404"]);
 	getAllClasses("html", ".elements_list");
 });
 
