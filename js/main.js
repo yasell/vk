@@ -1,37 +1,37 @@
 $(document).ready(function($) {
-	$body = $("body");
+	$body = $('body');
 	windowWidth = $(window).width();
 	windowHeight = $(window).height();
 
 	//developer funcitons
-	pageWidget(["index", "catalog", "catalog_inner", "product", "gallery", "gallery_inner", "news", "contacts", "price", "dillers", "search", "textpage", "404"]);
-	getAllClasses("html", ".elements_list");
+	pageWidget(['index', '404', 'catalog_inner', 'catalog', 'contacts', 'dillers', 'gallery_inner', 'gallery', 'news', 'price', 'product', 'search', 'textpage']);
+	getAllClasses('html', '.elements_list');
 });
 
 // main navigation menu
 $(function() {
-	var html = $('html'),
-		navContainer = $('.nav-container'),
-		navToggle = $('.nav-toggle'),
-		navDropdownToggle = $('.has-dropdown');
+	var html = $("html"),
+		navContainer = $(".nav-container"),
+		navToggle = $(".nav-toggle"),
+		navDropdownToggle = $(".has-dropdown");
 
 	// Nav toggle
-	navToggle.on('click', function(e) {
+	navToggle.on("click", function(e) {
 		var $this = $(this);
 		e.preventDefault();
-		$this.toggleClass('is-active');
-		navContainer.toggleClass('is-visible');
-		html.toggleClass('nav-open');
+		$this.toggleClass("is-active");
+		navContainer.toggleClass("is-visible");
+		html.toggleClass("nav-open");
 	});
 
 	// Nav dropdown toggle
-	navDropdownToggle.on('click', function() {
+	navDropdownToggle.on("click", function() {
 		var $this = $(this);
-		$this.toggleClass('is-active').children('ul').toggleClass('is-visible');
+		$this.toggleClass("is-active").children("ul").toggleClass("is-visible");
 	});
 
 	// Prevent click events from firing on children of navDropdownToggle
-	navDropdownToggle.on('click', '*', function(e) {
+	navDropdownToggle.on("click", "*", function(e) {
 		e.stopPropagation();
 	});
 });

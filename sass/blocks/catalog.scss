@@ -14,13 +14,15 @@
 	transition: all 0.5s ease;
 
 	@media (max-width: 920px) {
-		margin-bottom: 0;
+		margin-bottom: 1rem;
 	}
 	@media (max-width: $tablet) {
 		width: 20rem;
+		min-height: 29rem;
 	}
 	@media (max-width: $mobile_full) {
-		min-height: 30rem;
+		width: 14rem;
+		min-height: 20rem;
 	}
 }
 
@@ -30,44 +32,51 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	min-height: inherit;
-	background: url("../img/catalog-mark-grey.svg") center no-repeat;
+	background-color: #706F6F;
+	border-radius: 12rem 12rem 0 0;
 	transition: all 0.3s;
 
 	&:hover,
 	&:active {
-		background-image: url("../img/catalog-mark-green.svg");
-
-		.catalog__text {
-			background-color: $green;
-		}
+		background-color: $green;
 	}
 }
 
 .catalog__img {
 	position: absolute;
-  top: 18px;
-  left: 6px;
+  top: 8px;
+  left: 0;
+	right: 0;
   width: 95%;
+	margin: auto;
 
 	img {
 		max-width: 100%;
 	}
 	@media (max-width: $tablet) {
-		top: 40px;
-		left: 5px;
+		top: 4px;
 	}
 	@media (max-width: $mobile_full) {
-		top: 20px;
+		top: 3px;
 	}
 }
 
 .catalog__text {
 	margin-top: auto;
-	margin-bottom: 1.5rem;
-	padding: 1.5rem 1rem;
+	margin-bottom: 1rem;
+	padding: 1.5rem 3rem;
 	text-align: center;
 	font: 600 2rem $font_1;
 	color: #fff;
-	background-color: #706F6F;
 	transition: all 0.3s;
+
+	@media (max-width: $tablet) {
+		font-size: 1.8rem;
+	}
+
+	@media (max-width: $mobile_full) {
+		margin-bottom: 0;
+		padding: 1rem;
+		font-size: 1.4rem;
+	}
 }

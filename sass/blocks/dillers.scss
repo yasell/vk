@@ -6,14 +6,16 @@
 }
 
 .dillers {
-
 	.cd-accordion-menu .has-children > ul {
-		background: #fff url(../img/main-bg.svg) center repeat fixed;
+		background: #fff url("../img/main-bg.svg") center repeat fixed;
 		background-size: 30rem;
 	}
 
 	.has-children {
-		background-color: $grey;
+		background-color: $color_title;
+		&:nth-child(even) {
+			background-color: $grey;
+		}
 	}
 
 	label {
@@ -36,7 +38,6 @@
 }
 
 .cd-accordion-menu ul li.dillers__table {
-
 	a {
 		padding: 0.5rem;
 	}
